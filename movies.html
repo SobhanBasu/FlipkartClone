@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="inputValue">
+<button onclick="filterMovie()">Search</button>
+<p id="para"></p>
+    <script>
+        let data = [
+                {
+                    movieName : "bahulbali",
+                    actor : "Prabhas",
+                    actress : "Anushka shetty",
+                    category : "action"
+                },
+                {
+                    movieName : "bahulbali2",
+                    actor : "Prabhas",
+                    actress : "Anushka shetty",
+                    category : "action"
+                },
+                {
+                    movieName : "Tumbhad",
+                    actor : "Shah",
+                    actress : "Amma",
+                    category : "Thriller"
+                },
+                {
+                    movieName : "kantaara",
+                    actor : "Aakash",
+                    actress : "Aakashi",
+                    category : "horror"
+                },
+                {
+                    movieName : "fastx",
+                    actor : "Harsh",
+                    actress : "Harsha",
+                    category : "action"
+                }
+            ]
+
+                // input box
+                // BUTTON WITH EVENT 
+                // FUNCTION CREATE FOR FILTER 
+                // THEN DISPLAY ON THE SCREEN
+
+
+                function filterMovie(){
+                    let kuchBhiDaal = document.getElementById('inputValue').value
+                    console.log(inputValue,"inputValue")
+
+                    let filterData = data.filter((val)=>{
+                        return val.movieName == kuchBhiDaal.toLowerCase()
+                        // console.log(val,"fdbfg")
+                    })
+
+                    console.log(filterData,"filterData")
+
+                    document.getElementById('para').innerHTML = filterData[0].actor + filterData[0].actress
+                }
+
+    </script>
+</body>
+</html>
